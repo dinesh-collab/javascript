@@ -23,6 +23,8 @@
       var words = sentence.split(" ");
       var bracketWords = "(" + words.join(")(") + ")";
       var sliceWords = words.slice(20);
+      var middleSentence = sliceWords.join(" ");
+      sentence.innerText = middleSentence;
     </script>
   </body>
 </html>
