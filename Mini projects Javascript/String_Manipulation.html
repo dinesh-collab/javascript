@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="sentence">
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias
+      adipisci et, accusamus quam ex voluptatum consectetur consequatur? Eum
+      dolore similique, minima nihil sapiente velit ad praesentium, dolorum
+      labore, earum dignissimos!
+    </h1>
+
+    <script>
+      var sentenceNode = document.getElementById("sentence");
+      var sentence = sentenceNode.innerText;
+      console.log("sentence:", sentence);
+      var upperSentence = sentence.toUpperCase();
+      var lowerSentence = sentence.toLowerCase;
+      var firstTenChar = sentence.substr(0, 10);
+      var words = sentence.split(" ");
+      var bracketWords = "(" + words.join(")(") + ")";
+      var sliceWords = words.slice(20);
+    </script>
+  </body>
+</html>
