@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="item">Hello</h1>
+
+    <script>
+      var tag = document.getElementById("item");
+      var name = prompt("enter the type of animal : CAT/DOG");
+
+      if (name.toLowerCase() == "cat") {
+        var isCat = true;
+      } else {
+        var isCat = false;
+      }
+
+      if (isCat) {
+        console.log("Welcome cat");
+        tag.innerHTML = "Welcome cat";
+      } else {
+        console.log("welcome dog");
+      }
+    </script>
+  </body>
+</html>
