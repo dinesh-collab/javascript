@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mini project 3</title>
+  </head>
+  <body>
+    <h1 id="item">Hello welcome, You are not eligible to vote</h1>
+    <ol>
+      1. Ask the user for a number 2.cast the input into a number 3.Make sure
+      the number is valid 4.If the number is over 18 change some text on the
+      page
+    </ol>
+    <script>
+      var itemTag = document.getElementById("item");
+      var input = prompt("Enter your Age"); // 1
+      var age = Number(input); //2
+      if (age) {
+        console.log("It is a number"); //3
+        if (age > 18) {
+          itemTag.innerText = "You are eligible to vote"; //4
+        }
+      } else {
+        alert("Enter the Number ");
+      }
+    </script>
+  </body>
+</html>
