@@ -1,24 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    
-<h1 id="welcome">
-
-</h1>
+  </head>
+  <body>
+    <h1 id="welcome"></h1>
     <script>
-        var name = prompt("ener your name")
-        var welcomeNode = document.getElementById("welcome")
-        if(name.toLowerCase() == "dinesh")
-        {
-            welcomeNode.innerText = "Welcome " + name
-        }
-        
+      var name = prompt("ener your name");
+      var welcomeNode = document.getElementById("welcome");
+      if (name.toLowerCase() == "dinesh") {
+        welcomeNode.innerText = "Welcome " + name;
+      }
 
+      /*  !=
+             >=
+             <
+             >
+             <=
+             ===   */
+
+      var course = "js";
+      if (course != "java") {
+        console.log("nOt a js course");
+      }
+
+      var age = 30;
+      if (age >= 18) {
+        console.log("You can vote");
+      } else {
+        console.log("access denied");
+      }
+
+      if (name.length <= 10) {
+        console.log("name is less than 10 and length of name is", name.length);
+      }
     </script>
-</body>
+  </body>
 </html>
