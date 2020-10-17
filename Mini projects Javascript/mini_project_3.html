@@ -16,11 +16,9 @@
       var itemTag = document.getElementById("item");
       var input = prompt("Enter your Age"); // 1
       var age = Number(input); //2
-      if (age) {
+      if (age && age >= 18) {
         console.log("It is a number"); //3
-        if (age > 18) {
-          itemTag.innerText = "You are eligible to vote"; //4
-        }
+        itemTag.innerText = "You are eligible to vote"; //4
       } else {
         alert("Enter the Number ");
       }
