@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>type casting</title>
+  </head>
+  <body>
+    <script>
+      var name = prompt("enter a number");
+      console.log(typeof name);
+      name1 = Number(name); // converted string to number
+      console.log(typeof name1);
+      if (name1) {
+        alert("YOu entered a number");
+      } else {
+        console.log("it is a string");
+      }
+
+      var isTure = "true";
+      console.log(isTure, typeof Boolean(isTure), typeof isTure); //converting string to boolean
+
+      var arr = "one";
+      arr = Array(arr);
+      console.log(typeof arr);
+    </script>
+  </body>
+</html>
