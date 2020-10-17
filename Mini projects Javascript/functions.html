@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function greeting(name, age) {
+        console.log("Hello" + name);
+        console.log("My age is" + age);
+
+        return name;
+      }
+
+      var greet1 = greeting("dinesh", 25);
+      console.log(greet1);
+
+      //function to make math
+      var num = prompt("enter a number for math");
+      nume = Number(num);
+      function doMath(num) {
+        nume = Number(num);
+        if (nume) {
+          var newNum = (nume + 1) / 2;
+          return newNum;
+        } else {
+          return "NOt a number";
+        }
+      }
+      console.log(doMath(nume));
+
+      //Function to change celcius to farenheit
+      function cToF(cel) {
+        var faren = cel * 1.8 + 32;
+        return faren;
+      }
+      console.log(cToF(100)); //100 Celcius to faren
+      console.log(cToF(0));
+    </script>
+  </body>
+</html>
