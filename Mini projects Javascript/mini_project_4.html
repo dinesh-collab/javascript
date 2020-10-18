@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <p>
+      
+      <ol>
+        <li>
+          1.Create a simple tip calculator 2.It needs to accept 2 parameters 3.Make
+          the tip parameter optional 4.Return the total amount and save it to var
+        </li>
+      </ol>
+  </p>
+  <body>
+    <script>
+      var total = prompt("Enter the total amount");
+      var tip = prompt("Enter the tip percent");
+
+      total = Number(total);
+      tip = Number(tip);
+      function tipCalc(total, tip = 5) {
+          tip = tip / 100
+        var newTotal = (tip * total) ;
+        console.log(newTotal + total);
+        return (newTotal+total);
+      }
+
+      var calulatedTotal = tipCalc(total, tip);
+      console.log("total calculated is " + calulatedTotal);
+    </script>
+  </body>
+</html>
