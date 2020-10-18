@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Events</title>
+  </head>
+  <body>
+    <input
+      type="number"
+      class="numb"
+      style="font-size: large; padding: 30px; color: darkgreen"
+    />
+    <button style="color: brown; padding: 10px" onclick="add()">Add 100</button>
+    <h1>The total calculated is : <span> N/A </span></h1>
+    <script>
+      function add(val) {
+        var inputNum = document.querySelector(".numb");
+        var val = Number(inputNum.value);
+
+        var cal = document.querySelectorAll("h1")[0];
+        var span = cal.querySelector("span");
+        var total = val + 100;
+        span.innerHTML = total;
+      }
+    </script>
+  </body>
+</html>
