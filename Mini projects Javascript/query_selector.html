@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Query selector</title>
+  </head>
+  <body>
+    <h1 class="item">Hello world text before change</h1>
+
+    <h1 class="item">Hello world text before change</h1>
+
+    <h1 class="item">Hello world text before change</h1>
+    <a href=""> Nothing </a>
+
+    <input
+      type="text"
+      value="hello"
+      style="padding: 30px; font-size: 25px"
+      class="form"
+    />
+    <input
+      type="text"
+      style="padding: 40px; font-size: large"
+      class="inp"
+      value="txt value"
+    />
+    <script>
+      /* 
+        .Class {}
+        #id {}
+        element {}
+        */
+      var newText = document.querySelector(".item");
+      newText.innerHTML = "text after change";
+      var link = document.querySelector("a");
+      link.innerHTML = "new link produced";
+      var link = document.querySelectorAll("h1");
+      link.innerHTML = "new link produced";
+      var inp = document.querySelector(".form");
+      console.log(inp.value);
+      var txt = document.querySelector(".inp");
+      console.log(txt.value);
+    </script>
+  </body>
+</html>
