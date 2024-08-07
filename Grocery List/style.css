@@ -1,0 +1,15 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+#app {
+    max-width: 500px;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+}
+
+#grocery-list {
+    list-style-type: none;
+    padding: 0;
+}
