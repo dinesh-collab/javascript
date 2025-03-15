@@ -8,8 +8,8 @@ const calculator = {
 function inputDigit(digit) {
     const { displayValue, waitingForSecondOperand } = calculator;
 
-    if (waitingForSecondOperand === true) {
-        calculator.displayValue = digit;
+    if (waitingForSecondOperand) {
+        calculator.displayValue = digit;  // Replace with new digit
         calculator.waitingForSecondOperand = false;
     } else {
         calculator.displayValue = displayValue === '0' ? digit : displayValue + digit;
@@ -29,11 +29,13 @@ function inputDecimal(dot) {
 }
 
 function handleOperator(nextOperator) {
-    const { firstOperand, displayValue, operator } = calculator
+    const { firstOperand, displayValue, operator } = calculator;
     const inputValue = parseFloat(displayValue);
 
     if (operator && calculator.waitingForSecondOperand) {
         calculator.operator = nextOperator;
+        calculator.displayValue = firstOperand + ' ' + nextOperator; // Show operator in UI
+        updateDisplay();
         return;
     }
 
@@ -42,16 +44,25 @@ function handleOperator(nextOperator) {
     } else if (operator) {
         const result = performCalculation[operator](firstOperand, inputValue);
 
-        calculator.displayValue = String(result);
+        calculator.displayValue = String(result) + ' ' + nextOperator; // Show operator in UI
         calculator.firstOperand = result;
+    } else {
+        calculator.displayValue = displayValue + ' ' + nextOperator; // Show operator if none exists
     }
 
     calculator.waitingForSecondOperand = true;
     calculator.operator = nextOperator;
+
+    if (nextOperator === '=') {
+        calculator.operator = null;
+        calculator.firstOperand = null;
+    }
+
+    updateDisplay();
 }
 
 const performCalculation = {
-    '/': (firstOperand, secondOperand) => firstOperand / secondOperand,
+    '/': (firstOperand, secondOperand) => secondOperand === 0 ? 'Error' : firstOperand / secondOperand,
     '*': (firstOperand, secondOperand) => firstOperand * secondOperand,
     '+': (firstOperand, secondOperand) => firstOperand + secondOperand,
     '-': (firstOperand, secondOperand) => firstOperand - secondOperand,
@@ -97,3 +108,8 @@ keys.addEventListener('click', (event) => {
         updateDisplay();
         return;
    
+    }
+
+    inputDigit(target.value);
+    updateDisplay();
+});
