@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Projects</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #1e3c72, #2a5298);
+            color: #fff;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            margin-top: 20px;
+            font-size: 2em;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        .project-card {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: #fff;
+            font-size: 1.2em;
+            transition: 0.3s ease-in-out;
+        }
+        .project-card:hover {
+            background: rgba(255, 255, 255, 0.4);
+            transform: translateY(-5px);
+        }
+        .icon {
+            width: 30px;
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>JavaScript Projects</h1>
+    <div class="container" id="projects-container"></div>
+
+    <script>
+        const baseURL = "https://dinesh-collab.github.io/javascript/";
+        const projects = [
+            { name: "Background Image Slider Project", icon: "🌄" },
+            { name: "Change Background Color Project", icon: "🎨" },
+            { name: "Countdown Timer", icon: "⏳" },
+            { name: "Counter Project", icon: "🔢" },
+            { name: "Course Form", icon: "📄" },
+            { name: "DoEvents", icon: "📆" },
+            { name: "Filter Project", icon: "🔍" },
+            { name: "Grocery Cart Project", icon: "🛒" },
+            { name: "Grocery List", icon: "📝" },
+            { name: "Hex Change Background Color Project", icon: "🎨" },
+            { name: "Mini projects Javascript", icon: "📦" },
+            { name: "Modal Project", icon: "💬" },
+            { name: "Pass the Message Project", icon: "📢" },
+            { name: "Random Quotes Project", icon: "💡" },
+            { name: "Testimonials Project", icon: "🗣️" },
+            { name: "Tip Form Project", icon: "💰" },
+            { name: "Calculator", icon: "🧮" },
+            { name: "Linear Gradient", icon: "🌈" },
+            { name: "To-Do List", icon: "✅" }
+        ];
+
+        const container = document.getElementById("projects-container");
+
+        projects.forEach(project => {
+            const link = document.createElement("a");
+            link.href = `${baseURL}${encodeURIComponent(project.name)}/`;
+            link.className = "project-card";
+            link.innerHTML = `<span class="icon">${project.icon}</span> ${project.name}`;
+            container.appendChild(link);
+        });
+    </script>
+</body>
+</html>
