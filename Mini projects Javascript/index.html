@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini JavaScript Projects</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #1e3c72, #2a5298);
+            color: #fff;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            margin-top: 20px;
+            font-size: 2em;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        .project-card {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: #fff;
+            font-size: 1.2em;
+            transition: 0.3s ease-in-out;
+        }
+        .project-card:hover {
+            background: rgba(255, 255, 255, 0.4);
+            transform: translateY(-5px);
+        }
+        .icon {
+            width: 30px;
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Mini JavaScript Projects</h1>
+    <div class="container" id="projects-container"></div>
+
+    <script>
+        const baseURL = "https://dinesh-collab.github.io/javascript/Mini%20projects%20Javascript/";
+        const projects = [
+            { name: "Accept User Info", filename: "Accept_user_info.html", icon: "👤" },
+            { name: "Code Comments", filename: "Code_comments.html", icon: "//" },
+            { name: "Comparition Operators", filename: "Comparition_Operators.html", icon: "==" },
+            { name: "Handling Special Cases", filename: "Handling_Special_cases.html", icon: "🚧" },
+            { name: "Mini Project 2", filename: "MiniProject_2.html", icon: "✨" },
+            { name: "String Manipulation", filename: "String_Manipulation.html", icon: "✂️" },
+            { name: "Arithmatic", filename: "arithmatic.html", icon: "➕" },
+            { name: "Boolean Logic", filename: "boolean_logic.html", icon: "true" },
+            { name: "Events", filename: "events.html", icon: "🖱️" },
+            { name: "Functions", filename: "functions.html", icon: "⚙️" },
+            { name: "List With Arrays", filename: "list_With_Arrays.html", icon: "配列" },
+            { name: "Mini Project 3", filename: "mini_project_3.html", icon: "💡" },
+            { name: "Mini Project 4", filename: "mini_project_4.html", icon: "🚀" },
+            { name: "Query Selector", filename: "query_selector.html", icon: "#️⃣" },
+            { name: "Script", filename: "script.html", icon: "<>" },
+            { name: "Variable Casting", filename: "variable_casting.html", icon: "➡️" }
+        ];
+
+        const container = document.getElementById("projects-container");
+
+        projects.forEach(project => {
+            const link = document.createElement("a");
+            link.href = `${baseURL}${encodeURIComponent(project.filename)}`;
+            link.className = "project-card";
+            link.innerHTML = `<span class="icon">${project.icon}</span> ${project.name}`;
+            container.appendChild(link);
+        });
+    </script>
+</body>
+</html>

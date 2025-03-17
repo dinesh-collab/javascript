@@ -52,36 +52,42 @@
     <div class="container" id="projects-container"></div>
 
     <script>
-        const baseURL = "https://dinesh-collab.github.io/javascript/";
-        const projects = [
-            { name: "Background Image Slider Project", icon: "🌄" },
-            { name: "Change Background Color Project", icon: "🎨" },
-            { name: "Countdown Timer", icon: "⏳" },
-            { name: "Counter Project", icon: "🔢" },
-            { name: "Course Form", icon: "📄" },
-            { name: "DoEvents", icon: "📆" },
-            { name: "Filter Project", icon: "🔍" },
-            { name: "Grocery Cart Project", icon: "🛒" },
-            { name: "Grocery List", icon: "📝" },
-            { name: "Hex Change Background Color Project", icon: "🎨" },
-            { name: "Mini projects Javascript", icon: "📦" },
-            { name: "Modal Project", icon: "💬" },
-            { name: "Pass the Message Project", icon: "📢" },
-            { name: "Random Quotes Project", icon: "💡" },
-            { name: "Testimonials Project", icon: "🗣️" },
-            { name: "Tip Form Project", icon: "💰" },
-            { name: "Calculator", icon: "🧮" },
-            { name: "Linear Gradient", icon: "🌈" },
-            { name: "To-Do List", icon: "✅" }
-        ];
+    const baseURL = "https://dinesh-collab.github.io/javascript/";
+const projects = [
+    { name: "Background Image Slider Project", icon: "🌄", githubURL: null },
+    { name: "Change Background Color Project", icon: "🎨", githubURL: null },
+    { name: "Countdown Timer", icon: "⏳", githubURL: null },
+    { name: "Counter Project", icon: "🔢", githubURL: null },
+    { name: "Course Form", icon: "📄", githubURL: null },
+    { name: "DoEvents", icon: "📆", githubURL: null },
+    { name: "Filter Project", icon: "🔍", githubURL: null },
+    { name: "Grocery Cart Project", icon: "🛒", githubURL: null },
+    { name: "Grocery List", icon: "📝", githubURL: null },
+    { name: "Hex Change Background Color Project", icon: "🎨", githubURL: null },
+    { name: "Mini projects Javascript", icon: "📦", githubURL: "https://github.com/dinesh-collab/javascript/tree/master/Mini%20projects%20Javascript/" },
+    { name: "Modal Project", icon: "💬", githubURL: null },
+    { name: "Pass the Message Project", icon: "📢", githubURL: null },
+    { name: "Random Quotes Project", icon: "💡", githubURL: null },
+    { name: "Testimonials Project", icon: "🗣️", githubURL: null },
+    { name: "Tip Form Project", icon: "💰", githubURL: null },
+    { name: "Calculator", icon: "🧮", githubURL: "https://dinesh-collab.github.io/javascript/calculator/" },
+    { name: "Linear Gradient", icon: "🌈", githubURL: "https://dinesh-collab.github.io/javascript/linear%20gradient/" },
+    { name: "To-Do List", icon: "✅", githubURL: "https://dinesh-collab.github.io/javascript/to-do-list/" }
+];
 
         const container = document.getElementById("projects-container");
 
         projects.forEach(project => {
             const link = document.createElement("a");
-            link.href = `${baseURL}${encodeURIComponent(project.name)}/`;
             link.className = "project-card";
             link.innerHTML = `<span class="icon">${project.icon}</span> ${project.name}`;
+
+            if (project.githubURL) {
+                link.href = project.githubURL;
+            } else {
+                link.href = `${baseURL}${encodeURIComponent(project.name)}/`;
+            }
+
             container.appendChild(link);
         });
     </script>
