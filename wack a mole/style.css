@@ -1,0 +1,40 @@
+body {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+}
+
+.game-board {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    max-width: 400px;
+    margin: 20px auto;
+}
+
+.hole {
+    width: 100px;
+    height: 100px;
+    background: brown;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: relative;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.mole {
+    width: 80px;
+    height: 80px;
+    background: url('https://www.svgrepo.com/show/232665/mole.svg') no-repeat center;
+    background-size: contain;
+    position: absolute;
+    bottom: -80px;
+    transition: all 0.3s;
+}
+
+.hole.up .mole {
+    bottom: 0;
+}
